@@ -9,26 +9,24 @@ int contVocal = 0, contMayus = 0;
 int main(void)
 {
     char cancion, vocal;
+    puts("Ingrese una vocal");
+    scanf("%c", &vocal);
 
     puts("Ingrese la estrofa de una cancion con un punto al final");
-    scanf('%c', &cancion);
+    scanf("%c", &cancion);
 
-    puts("Ingrese una vocal");
-    scanf('%c', &vocal);
-    
-    printf("La salida es: ");
     while (cancion != '.')
     {
         mostrarCancion(cancion, vocal);
         scanf("%c", &cancion);
     }
-    printf("Cantidad de vocales: %d \n", contVocal);
-    printf("Cantidad de mayusculas: %d \n", contMayus);
+    printf("\n Cantidad de vocales: %d ", contVocal);
+    printf("\n Cantidad de mayusculas: %d", contMayus);
     return 0;
 }
 
 void mostrarCancion(char cancion, char vocal){
-    if (isupper(cancion) == 1)
+    if (isupper(cancion) > 0)
     {
         contMayus++;
         tolower(cancion);
